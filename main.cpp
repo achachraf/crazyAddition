@@ -8,24 +8,6 @@
 
 using namespace std;
 
-vector<vector<int>> getCombinations(int n, int r){
-
-    vector<bool> v(n);
-    vector<vector<int>> results;
-    fill(v.begin(), v.begin() + r, true);
-    do {
-        vector<int> temp;
-        for (int i = 0; i < n; ++i) {
-        if (v[i]) {
-            temp.push_back(i+1);
-        }
-        }
-        results.push_back(temp);
-    } while (prev_permutation(v.begin(), v.end()));
-    
-    return results;
-}
-
 void generateCombinations(int chosen[], int arr[],
                     int index, int r, int start, int end, vector<vector<int>> &results)
 {
